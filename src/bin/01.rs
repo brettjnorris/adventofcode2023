@@ -29,8 +29,7 @@ pub fn part_two(input: &str) -> Option<u32> {
         .split("\n")
         .filter(|entry| !entry.is_empty())
         .map(|entry| {
-
-            let modified = entry
+            entry
                 .replace("one", "o1e")
                 .replace("two", "t2o")
                 .replace("three", "t3e")
@@ -39,11 +38,7 @@ pub fn part_two(input: &str) -> Option<u32> {
                 .replace("six", "s6x")
                 .replace("seven", "s7n")
                 .replace("eight", "e8t")
-                .replace("nine", "n9e");
-
-            println!("original: {:?}, modified: {:?}", entry, modified);
-
-            modified
+                .replace("nine", "n9e")
         })
         .map(|entry| {
             let parsed: Vec<_> = entry
